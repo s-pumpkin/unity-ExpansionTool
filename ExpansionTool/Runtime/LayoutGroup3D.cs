@@ -207,6 +207,8 @@ namespace yo.ExpansionTool
 
             float totalLength = GetHorizontalTotalLength(count);
 
+            int index = 0;
+
             for (int i = 0; i < transform.childCount; i++)
             {
                 Transform child = transform.GetChild(i);
@@ -215,13 +217,15 @@ namespace yo.ExpansionTool
                     continue;
 
                 float position = GetHorizontalPosition(
-                    i,
+                    index,
                     count,
                     totalLength
                 );
 
                 child.localPosition =
                     GetHorizontalVector(position);
+
+                index++;
             }
         }
 
